@@ -12,9 +12,7 @@
 
 <br/>
 
-<p align="center">
-  <img src="screenshots/gameplay.png" alt="Demonstração da Mesa Neon Pinball" width="380" style="border-radius: 14px; box-shadow: 0 10px 40px rgba(192, 132, 252, 0.35); border: 2px solid rgba(192, 132, 252, 0.4);"/>
-</p>
+
 
 <p align="center">
   <b>Uma mesa completa de Pinball retro-arcade com física de corpos rígidos vetorial implementada do zero em Python nativo, sem motores externos como Box2D ou Pymunk, e sem recurso a ficheiros de áudio ou sprites externos.</b>
