@@ -13,9 +13,13 @@
 
   <br>
 
-  <p align="center">
-  <img src="gameplay.png" alt="Demonstração da Mesa Neon Pinball" width="380" style="border-radius: 14px; box-shadow: 0 10px 40px rgba(192, 132, 252, 0.35); border: 2px solid rgba(192, 132, 252, 0.4);">
-  </p>
+<p align="center">
+  <a href="gameplay.png" target="_blank">
+    <img src="gameplay.png" alt="Clique para ampliar a imagem" width="340" style="border-radius: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); cursor: pointer;">
+  </a>
+  <br>
+  <sub style="color: #94a3b8;">🔍 Clique na imagem para abrir em tamanho real</sub>
+
   </p>
 
   <p align="center">
