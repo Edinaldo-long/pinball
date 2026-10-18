@@ -188,18 +188,5 @@ pip install pygame
 # 3. Executar a mesa
 python pinball.py</code></pre>
 
-<hr>
-
-<h2>📁 Estrutura do Repositório</h2>
-
-<pre><code>pinball/
-│
-├── pinball.py           # Código fonte completo do motor físico e renderização
-├── requirements.txt     # Dependências mínimas (pygame)
-├── .gitignore           # Exclusão de cache e recorde local
-├── LICENSE              # Licença MIT
-├── README.md            # Documentação técnica de apresentação
-└── screenshots/
-    └── gameplay.png     # Captura de ecrã da mesa em execução</code></pre>
 
 
