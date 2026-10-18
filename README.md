@@ -13,13 +13,12 @@
 
   <br>
 
-<p align="center">
-  <a href="gameplay.png" target="_blank">
-    <img src="gameplay.png" alt="Clique para ampliar a imagem" width="340" style="border-radius: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); cursor: pointer;">
-  </a>
-  <br>
-  <sub style="color: #94a3b8;">🔍 Clique na imagem para abrir em tamanho real</sub>
-
+  <p align="center">
+    <a href="gameplay.png" target="_blank">
+      <img src="gameplay.png" alt="Clique para abrir em tamanho real" width="300" style="border-radius: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); cursor: pointer; border: 1px solid rgba(192, 132, 252, 0.4);">
+    </a>
+    <br>
+    <sub style="color: #94a3b8;">🔍 Clique na imagem para abrir em tamanho real</sub>
   </p>
 
   <p align="center">
@@ -40,7 +39,7 @@
 <h2>🌟 Visão Geral do Projeto</h2>
 
 <p>
-  O <strong>Neon Pinball</strong> recria a dinâmica real de uma máquina eletromecânica de flippers dos anos 80/90. O diferencial deste projeto reside na sua <strong>independência de assets externos</strong>: todos os elementos visuais, curvaturas de rampa, colisores, partículas incandescentes e sons de impacto são calculados e gerados proceduralmente por código matemático em tempo de execução.
+  O <strong>Neon Pinball</strong> recria a dinâmica real de uma máquina eletromecânica de flippers dos anos 80/90[cite: 5]. O diferencial deste projeto reside na sua <strong>independência de assets externos</strong>: todos os elementos visuais, curvaturas de rampa, colisores, partículas incandescentes e sons de impacto são calculados e gerados proceduralmente por código matemático em tempo de execução[cite: 5].
 </p>
 
 <hr>
@@ -49,10 +48,10 @@
 
 <h3>1. ⚙️ Pipeline Física com Sub-Stepping (Anti-Tunneling)</h3>
 <p>
-  Bolas de pinball atingem velocidades de pico elevadas (<code>MAX_SPEED = 27 px/frame</code>). Em motores físicos a 60 FPS, isso causaria o efeito de <em>tunneling</em> (a bola atravessar paredes ou flippers entre fotogramas consecutivos).
+  Bolas de pinball atingem velocidades de pico elevadas (<code>MAX_SPEED = 27 px/frame</code>)[cite: 5]. Em motores físicos a 60 FPS, isso causaria o efeito de <em>tunneling</em> (a bola atravessar paredes ou flippers entre fotogramas consecutivos).
 </p>
 <ul>
-  <li><strong>Solução:</strong> O ciclo principal divide cada fotograma em <strong>6 sub-passos temporais discretos</strong> (<code>SUBSTEPS = 6</code>), elevando a taxa de amostragem interna para <strong>360 Hz</strong>.</li>
+  <li><strong>Solução:</strong> O ciclo principal divide cada fotograma em <strong>6 sub-passos temporais discretos</strong> (<code>SUBSTEPS = 6</code>), elevando a taxa de amostragem interna para <strong>360 Hz</strong>[cite: 5].</li>
   <li>A integração das equações de Euler modificadas assegura trajetórias estáveis e colisões contínuas mesmo durante impactos elásticos de alta intensidade.</li>
 </ul>
 
@@ -61,25 +60,25 @@
   Os batentes (flippers) não atuam apenas como defletores geométricos estáticos:
 </p>
 <ul>
-  <li>O sistema calcula a <strong>velocidade angular instantânea</strong> (<code>ω = Δθ / Δt</code>) da ponta e do corpo do flipper.</li>
-  <li>No momento do contacto, a velocidade superficial tangencial é calculada vetorialmente: <code>v_superfície = (-ω · r_y, ω · r_x)</code>.</li>
-  <li>Essa velocidade é transferida diretamente como momento linear adicional para a bola, permitindo tacadas calculadas, amortecimentos suaves e disparos com base no tempo de acionamento.</li>
+  <li>O sistema calcula a <strong>velocidade angular instantânea</strong> (<code>ω = Δθ / Δt</code>) da ponta e do corpo do flipper[cite: 5].</li>
+  <li>No momento do contacto, a velocidade superficial tangencial é calculada vetorialmente: <code>v_superfície = (-ω · r_y, ω · r_x)</code>[cite: 5].</li>
+  <li>Essa velocidade é transferida diretamente como momento linear adicional para a bola, permitindo tacadas calculadas, amortecimentos suaves e disparos com base no tempo de acionamento[cite: 5].</li>
 </ul>
 
 <h3>3. 🔊 Síntese Procedural de Áudio (DSP por Software)</h3>
 <p>
-  Nenhum ficheiro <code>.wav</code> ou <code>.mp3</code> é necessário no repositório. O jogo sintetiza som diretamente na memória RAM através do módulo nativo <code>array</code> do Python:
+  Nenhum ficheiro <code>.wav</code> ou <code>.mp3</code> é necessário no repositório[cite: 5]. O jogo sintetiza som diretamente na memória RAM através do módulo nativo <code>array</code> do Python[cite: 5]:
 </p>
 <ul>
-  <li><strong>Bumpers &amp; Plunger:</strong> Modulação de frequência por chirp senoidal combinada com decaimento exponencial de envelope.</li>
-  <li><strong>Flippers &amp; Slingshots:</strong> Injeção controlada de ruído pseudo-aleatório (ruído branco filtrado) misturado com frequências graves para simular o solenoide mecânico.</li>
-  <li><strong>Alvos e Bónus:</strong> Ondas quadradas harmónicas sintetizadas por software para timbres característicos de chips de som vintage.</li>
+  <li><strong>Bumpers &amp; Plunger:</strong> Modulação de frequência por chirp senoidal combinada com decaimento exponencial de envelope[cite: 5].</li>
+  <li><strong>Flippers &amp; Slingshots:</strong> Injeção controlada de ruído pseudo-aleatório (ruído branco filtrado) misturado com frequências graves para simular o solenoide mecânico[cite: 5].</li>
+  <li><strong>Alvos e Bónus:</strong> Ondas quadradas harmónicas sintetizadas por software para timbres característicos de chips de som vintage[cite: 5].</li>
 </ul>
 
 <h3>4. 🧮 Geometria Analítica e Deteção Contínua</h3>
 <ul>
-  <li><strong>Projeção Escalar em Segmentos:</strong> Cálculo parametrizado <code>t ∈ [0, 1]</code> para deteção precisa em paredes lineares e guias angulares.</li>
-  <li><strong>Colisão Elástica Esfera-contra-Esfera (Multibola):</strong> Resolução de sobreposição geométrica com conservação de momento linear nos eixos normais de impacto.</li>
+  <li><strong>Projeção Escalar em Segmentos:</strong> Cálculo parametrizado <code>t ∈ [0, 1]</code> para deteção precisa em paredes lineares e guias angulares[cite: 5].</li>
+  <li><strong>Colisão Elástica Esfera-contra-Esfera (Multibola):</strong> Resolução de sobreposição geométrica com conservação de momento linear nos eixos normais de impacto[cite: 5].</li>
 </ul>
 
 <hr>
@@ -98,32 +97,32 @@
     <tr>
       <td><strong>Flipper Esquerdo</strong></td>
       <td><kbd>Seta Esquerda</kbd> ou <kbd>Z</kbd></td>
-      <td>Aciona o flipper esquerdo com rotação acelerada</td>
+      <td>Aciona o flipper esquerdo com rotação acelerada[cite: 5]</td>
     </tr>
     <tr>
       <td><strong>Flipper Direito</strong></td>
       <td><kbd>Seta Direita</kbd> ou <kbd>M</kbd></td>
-      <td>Aciona o flipper direito com rotação acelerada</td>
+      <td>Aciona o flipper direito com rotação acelerada[cite: 5]</td>
     </tr>
     <tr>
       <td><strong>Mola de Lançamento</strong></td>
       <td><kbd>Barra de Espaço</kbd></td>
-      <td><strong>Segure</strong> para tensionar a mola; <strong>solte</strong> para disparar</td>
+      <td><strong>Segure</strong> para tensionar a mola; <strong>solte</strong> para disparar[cite: 5]</td>
     </tr>
     <tr>
       <td><strong>Sacudir Mesa (Nudge)</strong></td>
       <td><kbd>Seta para Cima</kbd> ou <kbd>X</kbd></td>
-      <td>Aplica aceleração caótica (máximo de 3 vezes por bola)</td>
+      <td>Aplica aceleração caótica (máximo de 3 vezes por bola)[cite: 5]</td>
     </tr>
     <tr>
       <td><strong>Reiniciar Partida</strong></td>
       <td><kbd>R</kbd></td>
-      <td>Reinicia a mesa após o ecrã de Fim de Jogo</td>
+      <td>Reinicia a mesa após o ecrã de Fim de Jogo[cite: 5]</td>
     </tr>
     <tr>
       <td><strong>Sair</strong></td>
       <td><kbd>ESC</kbd></td>
-      <td>Encerra a aplicação</td>
+      <td>Encerra a aplicação[cite: 5]</td>
     </tr>
   </tbody>
 </table>
@@ -144,33 +143,33 @@
     <tr>
       <td><strong>Bumpers Centrais</strong></td>
       <td>100 × Multiplicador</td>
-      <td>Impulso elástico radial +4.5</td>
+      <td>Impulso elástico radial +4.5[cite: 5]</td>
     </tr>
     <tr>
       <td><strong>Kickers / Slingshots</strong></td>
       <td>50 × Multiplicador</td>
-      <td>Repulsão angular rápida</td>
+      <td>Repulsão angular rápida[cite: 5]</td>
     </tr>
     <tr>
       <td><strong>Alvos Superiores (5x)</strong></td>
       <td>500 × Multiplicador</td>
-      <td>Ilumina indicador neon</td>
+      <td>Ilumina indicador neon[cite: 5]</td>
     </tr>
     <tr>
       <td><strong>Combo Todos os 5 Alvos</strong></td>
       <td>+2.500 Pontos</td>
-      <td>Aumenta Multiplicador e ativa MULTIBOLA</td>
+      <td>Aumenta Multiplicador e ativa MULTIBOLA[cite: 5]</td>
     </tr>
     <tr>
       <td><strong>Bola Extra</strong></td>
       <td>Atingir 20.000 pts</td>
-      <td>+1 Vida adicional</td>
+      <td>+1 Vida adicional[cite: 5]</td>
     </tr>
   </tbody>
 </table>
 
 <blockquote>
-  <p><strong>🔥 Multibola:</strong> Ao acender os 5 alvos de topo, o multiplicador de pontuação aumenta (até <strong>x5</strong>) e uma nova bola entra imediatamente em jogo pelo topo do ecrã!</p>
+  <p><strong>🔥 Multibola:</strong> Ao acender os 5 alvos de topo, o multiplicador de pontuação aumenta (até <strong>x5</strong>) e uma nova bola entra imediatamente em jogo pelo topo do ecrã![cite: 5]</p>
 </blockquote>
 
 <hr>
@@ -193,5 +192,28 @@ pip install pygame
 # 3. Executar a mesa
 python pinball.py</code></pre>
 
+<hr>
 
+<h2>📁 Estrutura do Repositório</h2>
 
+<pre><code>pinball/
+│
+├── pinball.py           # Código fonte completo do motor físico e renderização
+├── gameplay.png         # Captura de ecrã da mesa em execução
+├── README.md            # Documentação técnica de apresentação
+└── .gitignore           # Exclusão de cache e recorde local</code></pre>
+
+<hr>
+
+<h2>👤 Autor</h2>
+
+<p>
+  Desenvolvido por <strong>Edinaldo Santos de Almeida</strong><br>
+  <a href="https://github.com/Edinaldo-long"><img src="https://img.shields.io/badge/GitHub-Edinaldo--long-181717?style=flat-square&logo=github" alt="GitHub"></a>
+</p>
+
+<hr>
+
+<div align="center">
+  <sub>Licenciado sob a Licença MIT. Desenvolvido para fins de estudo de engenharia de jogos, física computacional e computação gráfica 2D.</sub>
+</div>
