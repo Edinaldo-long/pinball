@@ -192,28 +192,4 @@ pip install pygame
 # 3. Executar a mesa
 python pinball.py</code></pre>
 
-<hr>
 
-<h2>📁 Estrutura do Repositório</h2>
-
-<pre><code>pinball/
-│
-├── pinball.py           # Código fonte completo do motor físico e renderização
-├── gameplay.png         # Captura de ecrã da mesa em execução
-├── README.md            # Documentação técnica de apresentação
-└── .gitignore           # Exclusão de cache e recorde local</code></pre>
-
-<hr>
-
-<h2>👤 Autor</h2>
-
-<p>
-  Desenvolvido por <strong>Edinaldo Santos de Almeida</strong><br>
-  <a href="https://github.com/Edinaldo-long"><img src="https://img.shields.io/badge/GitHub-Edinaldo--long-181717?style=flat-square&logo=github" alt="GitHub"></a>
-</p>
-
-<hr>
-
-<div align="center">
-  <sub>Licenciado sob a Licença MIT. Desenvolvido para fins de estudo de engenharia de jogos, física computacional e computação gráfica 2D.</sub>
-</div>
