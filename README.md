@@ -14,7 +14,8 @@
   <br>
 
   <p align="center">
-    <img src="https://raw.githubusercontent.com/Edinaldo-long/pinball/main/screenshots/gameplay.png" alt="Demonstração da Mesa Neon Pinball" width="380" style="border-radius: 14px; box-shadow: 0 10px 40px rgba(192, 132, 252, 0.35); border: 2px solid rgba(192, 132, 252, 0.4);">
+  <img src="gameplay.png" alt="Demonstração da Mesa Neon Pinball" width="380" style="border-radius: 14px; box-shadow: 0 10px 40px rgba(192, 132, 252, 0.35); border: 2px solid rgba(192, 132, 252, 0.4);">
+  </p>
   </p>
 
   <p align="center">
